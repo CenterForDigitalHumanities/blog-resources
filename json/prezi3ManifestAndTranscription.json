@@ -65,11 +65,11 @@
                      "motivation":"supplementing",
                      "label":{
                         "en":[
-                           "The transcription of this handwritten French correspondence between friends."
+                           "The transcription of this correspondence between friends."
                         ]
                      },
                      "body":{
-                        "id":"http://www.example.org/example1/resources/transcription.txt",
+                        "id":"http://www.example.org/example1/resources/paris_correspondence.txt",
                         "format":"text/plain",
                         "language":"en"
                      },
@@ -81,7 +81,7 @@
                      "motivation":"geolocate",
                      "label":{
                         "en":[
-                           "The word 'Paris' to note as Paris, France.  This will link the geographic point for Paris to the word Paris in the transcription."
+                           "The word 'Paris' to geolocated to central Paris, France.  This will link the coordinates to all instances of the word 'Paris' in the transcription text."
                         ]
                      },
                      "body":{
@@ -98,7 +98,7 @@
                         }
                      },
                      "target":{
-                        "source":"http://www.example.org/example1/resources/transcription.txt",
+                        "source":"http://www.example.org/example1/resources/paris_correspondence.txt",
                         "selector":{
                            "type":"TextQuoteSelector",
                            "exact":"Paris"
