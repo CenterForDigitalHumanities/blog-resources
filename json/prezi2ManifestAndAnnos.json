@@ -1,0 +1,82 @@
+{
+   "@context":[
+      "http://iiif.io/api/presentation/2/context.json",
+      "http://geojson.org/geojson-ld/geojson-context.jsonld"
+   ],
+   "id":"http://www.example.org/example1/manifest",
+   "type":"sc:Manifest",
+   "label":"Prezi 2 Geographic Annotation Example",
+   "description":"A Manifest containing Annotations to target the word 'Paris' on the Cover Page of Le Scarabée D'or in order to transcribe it and geocode it to Paris, France.",
+   "sequences":[
+      {
+         "@id":"http://www.example.org/example1/sequence/normal",
+         "@type":"sc:Sequence",
+         "label":"Example Manifest Page Order",
+         "canvases":[
+            {
+               "@id":"http://www.example.org/example1/canvas/1",
+               "@type":"sc:Canvas",
+               "images":[
+                  {
+                     "@type":"oa:Annotation",
+                     "motivation":"sc:painting",
+                     "resource":{
+                        "@id":"https://iiif.io/api/image/3.0/example/reference/59d09e6773341f28ea166e9f3c1e674f-gallica_ark_12148_bpt6k1526005v_f20/full/max/0/default.jpg",
+                        "@type":"dctypes:Image",
+                        "format":"image/jpeg",
+                        "service":{
+                           "@context":"http://iiif.io/api/image/2/context.json",
+                           "@id":"https://iiif.io/api/image/3.0/example/reference/59d09e6773341f28ea166e9f3c1e674f-gallica_ark_12148_bpt6k1526005v_f20",
+                           "profile":"http://iiif.io/api/image/2/level1.json"
+                        },
+                        "width":3204,
+                        "height":4613
+                     },
+                     "on":"http://example.org/iiif/book1/canvas/p1"
+                  }
+               ],
+               "otherContent":[
+                  {
+                     "@id":"http://www.example.org/example1/annolist/1",
+                     "@type":"sc:AnnotationList",
+                     "resources":[
+                        {
+                           "@id":"http://www.example.org/example1/anno/textanno",
+                           "@type":"oa:Annotation",
+                           "motivation":"supplementing",
+                           "label":"Transcription text for this region of the canvas.",
+                           "resource":{
+                              "@type":"cnt:ContentAsText",
+                              "chars":"Paris",
+                              "format":"text/plain",
+                              "language":"en"
+                           },
+                           "on":"http://www.example.org/example1/canvas/1#xywh=1300,3370,250,100"
+                        },
+                        {
+                           "@id":"http://www.example.org/example1/anno/geoanno",
+                           "@type":"oa:Annotation",
+                           "motivation":"geocode",
+                           "resource":{
+                              "type":"Feature",
+                              "properties":{
+                                 "label":"Paris, France"
+                              },
+                              "geometry":{
+                                 "type":"Point",
+                                 "coordinates":[
+                                    48.86,
+                                    2.34
+                                 ]
+                              }
+                           },
+                           "on":"http://www.example.org/example1/canvas/1#xywh=1300,3370,250,100"
+                        }
+                     ]
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}

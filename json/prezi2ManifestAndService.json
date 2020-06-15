@@ -1,0 +1,62 @@
+{
+   "@context":[
+      "http://iiif.io/api/presentation/2/context.json",
+      "http://geojson.org/geojson-ld/geojson-context.jsonld"
+   ],
+   "id":"http://www.example.org/example1/manifest",
+   "type":"sc:Manifest",
+   "label":"Prezi 2 Geographic Service Example Manifest",
+   "description":"A Manifest containing a service to geocode the Cover Page of Le Scarabée D'or to Paris, France.",
+   "sequences":[
+      {
+         "@id":"http://www.example.org/example1/sequence/normal",
+         "@type":"sc:Sequence",
+         "label":"Example Manifest Page Order",
+         "canvases":[
+            {
+               "@id":"http://www.example.org/example1/canvas/1",
+               "@type":"sc:Canvas",
+               "images":[
+                  {
+                     "@type":"oa:Annotation",
+                     "motivation":"sc:painting",
+                     "resource":{
+                        "@id":"https://iiif.io/api/image/3.0/example/reference/59d09e6773341f28ea166e9f3c1e674f-gallica_ark_12148_bpt6k1526005v_f20/full/max/0/default.jpg",
+                        "@type":"dctypes:Image",
+                        "format":"image/jpeg",
+                        "service":{
+                           "@context":"http://iiif.io/api/image/2/context.json",
+                           "@id":"https://iiif.io/api/image/3.0/example/reference/59d09e6773341f28ea166e9f3c1e674f-gallica_ark_12148_bpt6k1526005v_f20",
+                           "profile":"http://iiif.io/api/image/2/level1.json"
+                        },
+                        "width":3204,
+                        "height":4613
+                     },
+                     "on":"http://example.org/iiif/book1/canvas/p1"
+                  }
+               ]
+            }
+         ]
+      }
+   ],
+   "service":{
+      "@id":"https://example.org/geo/service/point-coordinates(48.86,2.34)&format=geojson",
+      "profile":"http://geojson.org/geojson-spec.html",
+      "type":"FeatureCollection",
+      "features":[
+         {
+            "@type":"Feature",
+            "properties":{
+               "label":"Paris, France"
+            },
+            "geometry":{
+               "type":"Point",
+               "coordinates":[
+                  48.86,
+                  2.34
+               ]
+            }
+         }
+      ]
+   }
+}

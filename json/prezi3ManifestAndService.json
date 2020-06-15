@@ -1,0 +1,100 @@
+{
+   "@context":[
+      "http://iiif.io/api/presentation/3/context.json",
+      "http://geojson.org/geojson-ld/geojson-context.jsonld",
+      {
+         "GeoJSON_Service":{
+            "@id":"https://my.service.blackbox/services#GeoJSON_Service",
+            "@type":"@vocab"
+         }
+      }
+   ],
+   "id":"http://www.example.org/example1/manifest",
+   "type":"Manifest",
+   "label":{
+      "en":[
+         "Geographic Annotation Example Manifest"
+      ]
+   },
+   "summary":{
+      "en":[
+         "A Manifest containing the Cover Page of Le Scarabée D'or where the manifest is geocoded to Paris, France."
+      ]
+   },
+   "items":[
+      {
+         "id":"http://www.example.org/example1/canvas/1",
+         "type":"Canvas",
+         "label":{
+            "fr":[
+               "Page de Couverture du Le Scarabée D'or"
+            ]
+         },
+         "width":3204,
+         "height":4613,
+         "items":[
+            {
+               "id":"http://www.example.org/example1/annopage/contentPage",
+               "type":"AnnotationPage",
+               "items":[
+                  {
+                     "id":"http://www.example.org/example1/anno/content",
+                     "type":"Annotation",
+                     "motivation":"painting",
+                     "label":{
+                        "en":[
+                           "The cover page."
+                        ]
+                     },
+                     "body":{
+                        "id":"https://iiif.io/api/image/3.0/example/reference/59d09e6773341f28ea166e9f3c1e674f-gallica_ark_12148_bpt6k1526005v_f20/full/max/0/default.jpg",
+                        "type":"Image",
+                        "format":"image/jpeg",
+                        "service":[
+                           {
+                              "id":"https://iiif.io/api/image/3.0/example/reference/59d09e6773341f28ea166e9f3c1e674f-gallica_ark_12148_bpt6k1526005v_f20",
+                              "type":"ImageService3",
+                              "profile":"level1"
+                           }
+                        ],
+                        "width":3204,
+                        "height":4613
+                     },
+                     "target":"http://www.example.org/example1/canvas/1"
+                  }
+               ]
+            }
+         ],
+         "structures":[
+
+         ],
+         "annotations":[
+
+         ],
+         "service":[
+            {
+               "id":"https://my.service.blackbox/geojson/point(48.86,2.34)",
+               "type":[
+                  "Feature",
+                  "GeoJSON_Service"
+               ],
+               "profile":"http://geojson.org/geojson-spec.html",
+               "properties":{
+                  "label":{
+                     "en":[
+                        "Location For Manifest"
+                     ]
+                  }
+               },
+               "geometry":{
+                  "type":"Point",
+                  "coordinates":[
+                     48.86,
+                     2.34
+                  ]
+               }
+            }
+         ]
+      }
+   ]
+}
